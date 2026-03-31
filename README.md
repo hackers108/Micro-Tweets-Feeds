@@ -1,4 +1,4 @@
-# Twitter Backend System Design (C++)
+# Micro-Tweets & Feed (C++)
 
 A scalable Twitter-like backend system implemented in C++ supporting tweet posting, follow/unfollow, and efficient news feed generation.
 
@@ -21,11 +21,10 @@ A scalable Twitter-like backend system implemented in C++ supporting tweet posti
 
 ---
 
-## How It Works
-
+##  How It Works
 - Each user maintains a linked list of tweets
 - Tweets are ordered using a global timestamp
-- News feed is generated using a max heap (merge k sorted lists)
+- News feed is generated using a max heap (merging k sorted tweet lists)
 
 ---
 
@@ -39,8 +38,35 @@ A scalable Twitter-like backend system implemented in C++ supporting tweet posti
 
 ---
 
-## Run Locally
+##  Project Structure
 
-```bash
+micro-tweets-feed/
+├── include/
+├── src/
+├── main.cpp
+
+---
+
+## Example Output
+
+===== Micro-Tweets & Feed =====
+
+1. Post Tweet
+2. Get News Feed
+3. Follow User
+4. Unfollow User
+5. Exit
+
+---
+
+##  Run Locally
+
 g++ main.cpp src/Twitter.cpp -o twitter
 ./twitter
+
+---
+
+## Key Highlights
+- Designed a real-world social media backend system
+- Implemented efficient feed retrieval using heap-based merging
+- Built an interactive CLI-based simulation
