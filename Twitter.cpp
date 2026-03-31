@@ -63,7 +63,7 @@ void Twitter::postTweet(int userId, int tweetId) {
     getUser(userId)->post(tweetId, timeStamp++);
 }
 
-// user validation 
+//  FIXED: user validation added
 void Twitter::follow(int followerId, int followeeId) {
     if (users.find(followerId) == users.end()) {
         cout << "Follower user not found!\n";
@@ -75,7 +75,11 @@ void Twitter::follow(int followerId, int followeeId) {
         return;
     }
 
-    users[followerId]->follow(followeeId);
+    else
+    {
+    	users[followerId]->follow(followeeId);
+	cout<<"Followed successfully";
+    }
 }
 
 void Twitter::unfollow(int followerId, int followeeId) {
@@ -88,8 +92,12 @@ void Twitter::unfollow(int followerId, int followeeId) {
         cout << "Followee user not found!\n";
         return;
     }
-
-    users[followerId]->unfollow(followeeId);
+    
+    else
+    {
+	cout<<"Unfollowed successfully";
+    	users[followerId]->unfollow(followeeId);
+    }
 }
 
 vector<int> Twitter::getNewsFeed(int userId) {
